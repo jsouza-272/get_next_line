@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:49 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/14 17:11:30 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/15 16:01:12 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char *ft_mod_join(char *s1, char *s2)
     j = find_new_line(s2);
     join = malloc((j + i + 1) * sizeof(char));
     if (!join)
-        return (free(join), NULL);
+        return (free(s1), NULL);
     join[i + j] = '\0';
     j = 0;
     i = 0;
@@ -52,7 +52,7 @@ char *ft_mod_join(char *s1, char *s2)
     }
     if (s2[j] == '\n')
         join[i + j] = s2[j];
-    return (join);
+    return (free(s1), join);
 }
 
 void move_buff(char *buff)
@@ -83,28 +83,16 @@ void move_buff(char *buff)
     }
 }
 
-
-
-/* {
+int has_newline(char *str)
+{
     size_t i;
-    ssize_t j;
 
     i = 0;
-    j = find_new_line(buff);
-    //printf("\n%zd\n", j);
-    //printf(" >>>%c<<< ", buff[j]);
-    //printf("hexa: %02x\n", buff[j]);
-    //fflush(stdout);
-    while (j + i < BUFFER_SIZE)
+    while(str[i])
     {
-        //printf("%c", buff[i]);
-        buff[i] = buff[j + i];
-        //printf("%c", buff[i]);
+        if (str[i] == '\n')
+            return (1);
         i++;
     }
-    while (i < BUFFER_SIZE)
-    {
-        buff[i] = '\0';
-        i++;
-    }
-} */
+    return (0);
+}

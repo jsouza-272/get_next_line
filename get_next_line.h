@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:42 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/14 15:34:31 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/15 15:15:01 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 #include <stdio.h>
 
 char *get_next_line(int fd);
+int has_newline(char *str);
 void move_buff(char *buff);
 ssize_t find_new_line(char *str);
 char *ft_mod_join(char *s1, char *s2);
