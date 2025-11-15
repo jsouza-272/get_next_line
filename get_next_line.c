@@ -6,12 +6,11 @@
 /*   By: jvlho <jvlho@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:46 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/15 15:57:51 by jvlho            ###   ########.fr       */
+/*   Updated: 2025/11/15 16:05:57 by jvlho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
 
 char *get_next_line(int fd)
 {
@@ -30,14 +29,14 @@ char *get_next_line(int fd)
             break;
         line = ft_mod_join(line, buff);
         if (!line)
-            return(free(line), NULL);
+            return(NULL);
         if (!has_newline(buff))
             move_buff(buff);
     }
     if (!line)
         line = ft_mod_join(line, buff);
     if (!line)
-        return (free(line), NULL);
+        return (NULL);
     move_buff(buff);
     return (line);
 }
