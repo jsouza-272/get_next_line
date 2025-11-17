@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:46 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/17 14:38:15 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/17 14:31:39 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
-	static char	buff[BUFFER_SIZE + 1];
+	static char	buff[FOPEN_MAX][BUFFER_SIZE + 1];
 	char		*line;
 	ssize_t		verify;
 
 	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = NULL;
-	while (!has_newline(buff))
+	while (!has_newline(buff[fd - 1]))
 	{
-		verify = fill_buff(buff, fd, &line);
-		if (verify == 0)
-			break ;
+		verify = fill_buff(buff[fd - 1], fd, &line);
 		if (verify == -1)
 			return (free(line), NULL);
-		if (!has_newline(buff))
-			move_buff(buff);
+		if (!verify)
+			break ;
+		if (!has_newline(buff[fd - 1]))
+			move_buff(buff[fd - 1]);
 	}
 	if (!line)
-		line = ft_mod_join(line, buff);
+		line = ft_mod_join(line, buff[fd - 1]);
 	if (!line)
 		return (NULL);
-	move_buff(buff);
+	move_buff(buff[fd - 1]);
 	return (line);
 }

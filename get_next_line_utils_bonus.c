@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:49 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/17 17:40:11 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/17 14:39:50 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 ssize_t	find_new_line(char *str)
 {
@@ -99,7 +99,7 @@ int	has_newline(char *str)
 
 int	fill_buff(char *buff, int fd, char **line)
 {
-	ssize_t	verify;
+	int verify;
 
 	verify = 1;
 	if (buff[0] == '\0')
