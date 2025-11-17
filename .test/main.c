@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:55:38 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/17 17:58:03 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/17 17:59:55 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ int main ()
     int fd = 0;
     int fd2 = 0;
     int fd3 = 0;
-    fd = open(".test/big.txt", O_RDONLY);
+    int fd4 = 0;
+    fd = open(".test/coisa.txt", O_RDONLY);
     fd2 = open(".test/coisa.txt", O_RDONLY);
     fd3 = open(".test/12.txt", O_RDONLY);
+    fd4 = open(".test/big.txt", O_RDONLY);
     char *s;
     printf("%d", fd);
     /* for(int i = 0; i < 16; i++)
@@ -46,4 +48,5 @@ int main ()
     close(fd);
     close(fd2);
     close(fd3);
+    close(fd4);
 }
