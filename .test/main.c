@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:55:38 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/17 17:59:55 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/18 10:07:48 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 /**
  * nao esquecer de dar free no main
  * nao abrir big.txt
+ * head -c 1000000 /dev/zero | tr '\0' 'A' > big.txt    <<--criar arquivo de 1mb usar com cuidado
  */
 
 int main ()
