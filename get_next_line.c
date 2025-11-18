@@ -6,14 +6,16 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:46 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/18 10:53:18 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/18 18:35:54 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 /**
- * OPEN_MAX <- limite minimo garantido pelo padrao C
+ * FOPEN_MAX <- limite minimo garantido pelo padrao C
+ * deve dar return de NULL se for empty file
+ * ver pq do **line no fill_buff
  */
 
 char	*get_next_line(int fd)
@@ -22,7 +24,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	ssize_t		verify;
 
-	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = NULL;
 	while (!has_newline(buff))
@@ -35,7 +37,7 @@ char	*get_next_line(int fd)
 		if (!has_newline(buff))
 			move_buff(buff);
 	}
-	if (!line)
+	if (!line && has_newline(buff))
 		line = ft_mod_join(line, buff);
 	if (!line)
 		return (NULL);

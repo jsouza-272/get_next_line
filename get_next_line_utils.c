@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:49 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/18 10:08:30 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/18 18:32:39 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,6 @@ int	fill_buff(char *buff, int fd, char **line)
 		return (0);
 	*line = ft_mod_join(*line, buff);
 	if (!line)
-		return (free(line), -1);
+		return (-1);
 	return (verify);
 }
