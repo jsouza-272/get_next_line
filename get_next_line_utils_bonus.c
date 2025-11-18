@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:49 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/17 14:39:50 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/18 10:09:31 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	has_newline(char *str)
 
 int	fill_buff(char *buff, int fd, char **line)
 {
-	int verify;
+	int	verify;
 
 	verify = 1;
 	if (buff[0] == '\0')
