@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:55:38 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/18 10:07:48 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/18 10:39:28 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main ()
     int fd2 = 0;
     int fd3 = 0;
     int fd4 = 0;
-    fd = open(".test/coisa.txt", O_RDONLY);
+    fd = open(".test/test.txt", O_RDONLY);
     fd2 = open(".test/coisa.txt", O_RDONLY);
     fd3 = open(".test/12.txt", O_RDONLY);
     fd4 = open(".test/big.txt", O_RDONLY);
