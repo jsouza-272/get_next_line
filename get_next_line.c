@@ -6,11 +6,15 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:46 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/17 14:38:15 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/18 10:53:18 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+/**
+ * OPEN_MAX <- limite minimo garantido pelo padrao C
+ */
 
 char	*get_next_line(int fd)
 {
