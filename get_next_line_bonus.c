@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:46 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/17 14:31:39 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/18 18:37:28 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_next_line(int fd)
 		if (!has_newline(buff[fd - 1]))
 			move_buff(buff[fd - 1]);
 	}
-	if (!line)
+	if (!line && has_newline(buff))
 		line = ft_mod_join(line, buff[fd - 1]);
 	if (!line)
 		return (NULL);
