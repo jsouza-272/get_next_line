@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:55:38 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/18 10:39:28 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/19 12:23:46 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main ()
         printf("file 3:   %s", s);
         free(s);
     } */
-    s = get_next_line(fd);
+    s = get_next_line(fd4);
     printf("%s", s);
     free(s);
     close(fd);
