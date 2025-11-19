@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:46 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/18 18:37:28 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/19 16:11:41 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@ char	*get_next_line(int fd)
 	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = NULL;
-	while (!has_newline(buff[fd - 1]))
+	while (!has_newline(buff[fd]))
 	{
-		verify = fill_buff(buff[fd - 1], fd, &line);
+		verify = fill_buff(buff[fd], fd, &line);
 		if (verify == -1)
 			return (free(line), NULL);
 		if (!verify)
 			break ;
-		if (!has_newline(buff[fd - 1]))
-			move_buff(buff[fd - 1]);
+		if (!has_newline(buff[fd]))
+			move_buff(buff[fd]);
 	}
 	if (!line && has_newline(buff))
-		line = ft_mod_join(line, buff[fd - 1]);
+		line = ft_mod_join(line, buff[fd]);
 	if (!line)
 		return (NULL);
-	move_buff(buff[fd - 1]);
+	move_buff(buff[fd]);
 	return (line);
 }
