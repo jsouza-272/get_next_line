@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:49 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/18 18:37:19 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/19 12:05:10 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	fill_buff(char *buff, int fd, char **line)
 	if (buff[0] == '\0')
 		verify = read(fd, buff, BUFFER_SIZE);
 	if (verify <= -1)
-		return (free(line), -1);
+		return (-1);
 	if (verify == 0)
 		return (0);
 	*line = ft_mod_join(*line, buff);

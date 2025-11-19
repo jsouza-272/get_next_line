@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:46 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/18 18:37:43 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/19 12:07:53 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 /**
  * FOPEN_MAX <- limite minimo garantido pelo padrao C
  * deve dar return de NULL se for empty file
- * ver pq do **line no fill_buff do mandatory
  */
 
 char	*get_next_line(int fd)
