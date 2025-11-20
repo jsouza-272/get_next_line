@@ -6,16 +6,11 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:36:46 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/19 12:07:53 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/20 10:18:18 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-/**
- * FOPEN_MAX <- limite minimo garantido pelo padrao C
- * deve dar return de NULL se for empty file
- */
 
 char	*get_next_line(int fd)
 {
