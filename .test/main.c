@@ -6,7 +6,7 @@
 /*   By: jsouza <jsouza@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 10:55:38 by jsouza            #+#    #+#             */
-/*   Updated: 2025/11/19 16:13:50 by jsouza           ###   ########.fr       */
+/*   Updated: 2025/11/20 10:19:31 by jsouza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 /**
  * nao esquecer de dar free no main
- * nao abrir big.txt
  * head -c 1000000 /dev/zero | tr '\0' 'A' > big.txt    <<--criar arquivo de 1mb usar com cuidado
  * FOPEN_MAX == minimo que qualquer implementacao do C deve permitir
  */
